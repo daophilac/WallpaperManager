@@ -1,4 +1,4 @@
-"""WallpaperCrop - crop images to a target ratio and apply as Windows wallpaper."""
+"""WallpaperManager - crop images to a target ratio and apply as Windows wallpaper."""
 from __future__ import annotations
 
 import ctypes
@@ -65,7 +65,7 @@ class AppPaths:
     def __init__(self):
         base = Path(sys.executable).parent if getattr(sys, "frozen", False) \
                else Path(__file__).resolve().parent
-        self.data = base / "wallpapercrop_data"
+        self.data = base / "wallpapermanager_data"
         self.cache = self.data / "cache"
         self.data.mkdir(exist_ok=True)
         self.cache.mkdir(exist_ok=True)
@@ -394,7 +394,7 @@ class MainWindow(QMainWindow):
 
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("WallpaperCrop")
+        self.setWindowTitle("WallpaperManager")
         self.resize(1280, 800)
         self.paths = AppPaths()
         self.state = StateManager(self.paths)
@@ -555,7 +555,7 @@ class MainWindow(QMainWindow):
                 self.crop_view.default_crop())
             self.state.data["last_image"] = path
             self.state.save()
-            self.setWindowTitle(f"WallpaperCrop — {Path(path).name}")
+            self.setWindowTitle(f"WallpaperManager — {Path(path).name}")
         except Exception as e:
             QMessageBox.warning(self, "Error", f"Failed to load:\n{path}\n\n{e}")
             self.current_orig = None

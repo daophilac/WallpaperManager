@@ -8,4 +8,4 @@ To build:
 
 pip install pyinstaller
 
-python -m PyInstaller --noconfirm --windoCrop wallpapercrop.py
+python -m PyInstaller --noconfirm --windowed --onefile --name WallpaperManager wallpapermanager.py

@@ -31,7 +31,7 @@ ENV/
 # Created next to the script/exe on first launch. Contains state.json
 # (user's folder path, crops, transforms, window geometry) and cache/*.bmp
 # (generated wallpaper files). Purely local — never commit.
-wallpapercrop_data/
+wallpapermanager_data/
 
 # ---------- IDE / editor ----------
 .vscode/
